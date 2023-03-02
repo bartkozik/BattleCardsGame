@@ -1,0 +1,7 @@
+{
+  "short_name": "Onboarding React App",
+  "name": "Deck of cards",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone"
+}

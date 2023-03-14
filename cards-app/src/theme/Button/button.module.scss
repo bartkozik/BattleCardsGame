@@ -1,0 +1,26 @@
+@import "theme/common-style.scss";
+
+.button {
+  @include flex-container($justify-content: center);
+  @include text;
+  @include gradientText($buttonTextGradient);
+  flex-direction: column;
+  height: inherit;
+  border-radius: inherit;
+  box-shadow: $buttonShadow;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    @include gradientText($buttonTextGradienHover);
+    box-shadow: $hoverButtonShadow;
+  }
+}
+
+.buttonBackground {
+  background: $primaryColor;
+  width: 100px;
+  height: 37px;
+  border-radius: 8px;
+  margin: auto;
+}

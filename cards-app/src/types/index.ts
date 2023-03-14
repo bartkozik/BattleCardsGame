@@ -21,3 +21,8 @@ export type Card = {
 };
 
 export type Player = "Player 1" | "Player 2";
+
+export type CardRevers = {
+  suit: string;
+  rank: string
+}

@@ -1,0 +1,86 @@
+$primaryColor: linear-gradient(
+  180deg,
+  rgb(58, 113, 92) 0%,
+  rgb(14, 56, 45) 100%
+);
+
+$backgroungFabricDescktop: url("../../public/cards/fabric_texture_green-1.png");
+$backgroundPatern: url("../../public/cards/Fill_1-1.png");
+$backgroundPaternMobile: url("../../public/cards/Fill_Mobile.png");
+
+//gradients for shadow in TableStart & PlayTable
+$gradientUp: linear-gradient(
+  to top,
+  rgba(21, 40, 35, 0) 0%,
+  rgba(21, 40, 35, 1) 100%
+);
+$gradientDown: linear-gradient(
+  to bottom,
+  rgba(21, 40, 35, 0) 0%,
+  rgba(21, 40, 35, 1) 100%
+);
+
+$gradientLeft: linear-gradient(
+  to left,
+  rgba(21, 40, 35, 0) 0%,
+  rgba(21, 40, 35, 1) 100%
+);
+
+$gradientRight: linear-gradient(
+  to right,
+  rgba(21, 40, 35, 0) 0%,
+  rgba(21, 40, 35, 1) 100%
+);
+
+//button colors & shadows
+$buttonTextGradient: linear-gradient(
+  #5f5532 0%,
+  #f7e2b7 42%,
+  #fffffd 80%,
+  #f5d697 100%
+);
+
+$buttonTextGradienHover: linear-gradient(
+  90deg,
+  rgb(185, 161, 109) 0%,
+  rgb(127, 108, 62) 45%,
+  rgb(247, 226, 183) 74%,
+  rgb(245, 214, 151) 88%,
+  rgb(73, 60, 27) 100%
+);
+
+$buttonShadow: 5px 5px 5px rgba(0, 0, 0, 0.5), 11px 11px 6px rgba(0, 0, 0, 0.1),
+  13px 13px 6px rgba(0, 0, 0, 0.1), 15px 15px 6px rgba(0, 0, 0, 0.08326),
+  17px 17px 9px rgba(0, 0, 0, 0.080119), 21px 21px 9px rgba(0, 0, 0, 0.082851),
+  25px 25px 13px rgba(0, 0, 0, 0.08),
+  -6px -10px 15px rgba(222, 255, 194, 0.1135);
+
+$hoverButtonShadow: -3px -7px 10px rgba(222, 255, 194, 0.11),
+  20px 20px 10px rgba(0, 0, 0, 0.08), 16px 16px 7px rgba(0, 0, 0, 0.08),
+  13px 13px 7px rgba(0, 0, 0, 0.08), 10px 10px 4px rgba(0, 0, 0, 0.08),
+  8px 8px 4px rgba(0, 0, 0, 0.1), 6px 6px 4px rgba(0, 0, 0, 0.1),
+  2px 2px 3px rgba(0, 0, 0, 0.5);
+
+$cardsShadowMiddle: 10px 2px 4px 1px rgba(0, 0, 0, 0.22);
+
+// text colors & shadows
+$textShadow: 2px 2px 7px rgba(248, 226, 184, 0.11),
+  -1px -1px 0 rgba(0, 0, 0, 0.5);
+
+$textColorGradient: linear-gradient(
+  270deg,
+  rgb(95, 85, 50) 0%,
+  rgb(247, 226, 183) 22%,
+  rgb(255, 255, 253) 37%,
+  rgb(245, 214, 151) 53%,
+  rgb(95, 85, 50) 100%
+);
+
+$borderGradientColor: linear-gradient(
+  90deg,
+  #b9a16d 0%,
+  #7f6c3e 21%,
+  #f7e2b7 61%,
+  #f5d697 67%,
+  #493c1b 100%
+);

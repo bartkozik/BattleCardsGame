@@ -1,0 +1,135 @@
+@import "./common-font.scss";
+@import "./common-responsive.scss";
+@import "./common-colors.scss";
+
+@mixin flex-container(
+  $justify-content: "flex-start",
+  $align-items: "stretch",
+  $flex-flow: "row nowrap",
+  $inline: false
+) {
+  @if $inline {
+    display: inline-flex;
+  } @else {
+    display: flex;
+  }
+  justify-content: #{$justify-content};
+  align-items: #{$align-items};
+  flex-flow: #{$flex-flow};
+  @content;
+}
+
+@mixin cardSize {
+  $card-height: 280px;
+  $card-width: 200px;
+  @content;
+}
+
+//gradient gold border for TableStart middleContainers
+@mixin borderStyleSmallBox {
+  $border: 1px;
+  background: $backgroungFabricDescktop;
+  background-clip: padding-box;
+  border: solid $border transparent;
+  border-radius: 33px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -$border;
+    border-radius: inherit;
+    background: $borderGradientColor;
+  }
+}
+@mixin borderStyleMediumBox {
+  $border: 1px;
+  background: $backgroungFabricDescktop;
+  background-clip: padding-box;
+  border: solid $border transparent;
+  border-radius: 37px;
+  padding: 7px;
+}
+@mixin borderStyleBigBox {
+  $border: 1px;
+  background: $borderGradientColor;
+  background-clip: padding-box;
+  border: solid $border transparent;
+  border-radius: 37px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -$border;
+    border-radius: inherit;
+    background: $borderGradientColor;
+  }
+}
+
+//table shadows with gradient for TableStart & PlayStart
+@mixin gradientTopDown {
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    opacity: 0.43;
+  }
+
+  &::before {
+    top: 0;
+    height: 35%;
+    background-image: $gradientUp;
+  }
+
+  &::after {
+    bottom: 0px;
+    height: 35%;
+    background-image: $gradientDown;
+  }
+}
+
+@mixin gradientLeftRight {
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.43;
+    z-index: -2;
+    top: 0;
+    width: 30%;
+    height: 100%;
+  }
+
+  &::before {
+    left: 0px;
+    background-image: $gradientLeft;
+  }
+
+  &::after {
+    right: 0px;
+    background-image: $gradientRight;
+  }
+}
+
+@mixin cardStyle {
+  @include cardSize;
+  box-shadow: $cardsShadowMiddle;
+}

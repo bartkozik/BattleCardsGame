@@ -1,0 +1,65 @@
+@import "theme/common-style";
+
+.table {
+  @include flex-container($align-items: center);
+  mix-blend-mode: multiply;
+  background-image: $backgroungFabricDescktop;
+  height: 100vh;
+  overflow: hidden;
+
+  .middleBox {
+    width: 980px;
+    height: 418px;
+    margin: 0.5px;
+    position: absolute;
+    top: 26.7%;
+    left: 16%;
+    padding: 0;
+    @include borderStyleBigBox;
+
+    @include screen-range(280px, 426px) {
+      top: 20%;
+    }
+
+    .centerBorder {
+      height: 416px;
+      margin: 0.5px;
+      position: relative;
+      @include borderStyleMediumBox;
+
+      .centerContainer {
+        @include flex-container($justify-content: center);
+        height: 100%;
+        margin-top: 0px;
+        margin-bottom: 7px;
+        position: relative;
+        z-index: 1;
+
+        .inCenter {
+          width: 965px;
+          height: 100%;
+          position: relative;
+          @include borderStyleSmallBox;
+
+          h1 {
+            @include flex-container(center, center);
+            margin-top: 137px;
+            margin-bottom: 21px;
+            text-shadow: $textShadow;
+            background: $textColorGradient;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}
+
+.gradientTopDown {
+  @include gradientTopDown;
+}
+
+.gradientLeftRight {
+  @include gradientLeftRight;
+}

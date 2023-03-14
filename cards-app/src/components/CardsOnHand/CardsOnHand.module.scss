@@ -1,0 +1,82 @@
+@import "theme/common-style.scss";
+
+.cards {
+  @include flex-container;
+  position: absolute;
+  top: 744px;
+  left: 406px;
+
+  @include screen-sm {
+    left: 135px;
+  }
+
+  @include screen-xs {
+    top: 671.52px;
+    left: 13.32px;
+  }
+
+  img {
+    @include cardStyle;
+    position: absolute;
+    top: 4px;
+    z-index: 2;
+
+    @include screen-xs {
+      top: 3.43px;
+    }
+
+    &:nth-child(2) {
+      z-index: 3;
+      left: 81px;
+      top: 10px;
+
+      @include screen-xs {
+        top: 8.56px;
+        left: 69.38px;
+      }
+    }
+
+    &:nth-child(3) {
+      z-index: 4;
+      left: 169.28px;
+      top: 0px;
+
+      @include screen-xs {
+        left: 145.1px;
+      }
+    }
+
+    &:nth-child(4) {
+      z-index: 5;
+      top: 16px;
+      left: 252.32px;
+
+      @include screen-xs {
+        top: 13.7px;
+        left: 208px;
+      }
+    }
+
+    &:nth-child(5) {
+      z-index: 6;
+      top: 4px;
+      left: 309.8px;
+
+      @include screen-xs {
+        top: 102.43px;
+        left: 50.35px;
+      }
+    }
+
+    &:nth-child(6) {
+      z-index: 7;
+      top: 7px;
+      left: 428px;
+
+      @include screen-xs {
+        top: 105px;
+        left: 153.56px;
+      }
+    }
+  }
+}

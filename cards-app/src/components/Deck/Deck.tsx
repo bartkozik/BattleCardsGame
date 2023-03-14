@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import CardComponent from "./CardComponent";
-import { Suit, Rank } from "../types";
+import CardComponent from "theme/Card/Card";
+import { Suit, Rank } from "types";
+import styles from "./Deck.module.scss";
 
 export type DeckComponentProps = {
   cards: {
@@ -16,14 +17,14 @@ const DeckComponent = ({
 }: DeckComponentProps): JSX.Element => {
   const [deck, setDeck] = useState(cards);
 
-  const handleShuffle = () => {
+  const handleShuffle = (): void => {
     console.log(deck);
   };
 
   return (
-    <div className="deck-container" onClick={handleShuffle}>
+    <div className={styles.deckContainer} onClick={handleShuffle}>
       {deck?.map((card, index) => (
-        <CardComponent key={index} drawnCard={card} />
+        <CardComponent isFront={false} key={index} drawnCard={card} />
       ))}
     </div>
   );

@@ -1,0 +1,27 @@
+$font-family: "Hoefler Text, sans-serif";
+
+@mixin typography {
+  h1 {
+    font-weight: 400;
+    font-size: 87px;
+    text-align: center;
+  }
+}
+
+@mixin text {
+  font-family: $font-family;
+  font-size: 17px;
+  font-weight: 900;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: center;
+  
+}
+
+@mixin gradientText($gradient) {
+  background-image: $gradient;
+  color: transparent; 
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+}
+

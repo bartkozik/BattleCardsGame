@@ -1,26 +1,44 @@
 @import "theme/common-style.scss";
 
 .button {
-  @include flex-container($justify-content: center);
+  @include flex-container(center, center, column);
   @include text;
   @include gradientText($buttonTextGradient);
-  flex-direction: column;
-  height: inherit;
-  border-radius: inherit;
+  position: relative;
+  height: 39px;
+  border-radius: 8px;
+  overflow: hidden;
+  padding-left: 27px;
+  padding-right: 27px;
   box-shadow: $buttonShadow;
   cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: $primaryColor;
+    border-radius: inherit;
+    z-index: -1;
+  }
 
   &:hover,
   &:active {
     @include gradientText($buttonTextGradienHover);
     box-shadow: $hoverButtonShadow;
   }
-}
 
-.buttonBackground {
-  background: $primaryColor;
-  width: 100px;
-  height: 37px;
-  border-radius: 8px;
-  margin: auto;
+  @include screen-xs {
+    padding-left: 39px;
+    padding-right: 39px;
+    height: 45px;
+  }
+
+  @include min-screen-min-width(1600px, 1100px) {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
 }

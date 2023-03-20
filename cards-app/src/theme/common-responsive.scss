@@ -92,10 +92,39 @@ $screen-xs-max: $screen-sm-min - 1;
     @content;
   }
 }
-
 // large and smaller
 @mixin screen-xl-minus {
   @include screen-max($screen-lg-max) {
+    @content;
+  }
+}
+
+// tablet & mobile flipped view
+@mixin mobileFlip($width, $height) {
+  @media screen and (min-width: $width) and (max-height: $height) {
+    @content;
+  }
+}
+
+@mixin mobileFlipMax($width, $height) {
+  @media screen and (max-width: $width) and (max-height: $height) {
+    @content;
+  }
+}
+
+@mixin tablet($width, $height) {
+  @media screen and (max-width: $width) and (max-height: $height) {
+    @content;
+  }
+}
+@mixin tabletMax($width, $height) {
+  @media screen and (max-width: $width) and (min-width: $width) and (min-height: $height) {
+    @content;
+  }
+}
+
+@mixin min-screen-min-width($width, $height) {
+  @media screen and (min-width: $width) and (min-height: $height) {
     @content;
   }
 }

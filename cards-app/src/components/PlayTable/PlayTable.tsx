@@ -23,8 +23,8 @@ const PlayTable = (): JSX.Element => {
               src="/cards/card-revers.png"
               alt="Card back"
             />
-            <div className="card-from-deck">{/* karta z góry talii */}</div>
           </div>
+          <div className="card-from-deck">{/* karta z góry talii */}</div>
           <div className={styles.middleContainer}>
             {/* Karty spalone w grze */}
             <img className="card-back" src="/cards/JOKER.png" alt="Card back" />

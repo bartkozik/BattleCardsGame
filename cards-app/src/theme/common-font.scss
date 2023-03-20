@@ -5,6 +5,25 @@ $font-family: "Hoefler Text, sans-serif";
     font-weight: 400;
     font-size: 87px;
     text-align: center;
+
+    @include screen-xs {
+      font-size: 5rem;
+    }
+    @include screen-range(768px, 900px) {
+      margin-top: 15%;
+    }
+
+    @include screen-range(280px, 500px) {
+      font-size: 4.38rem;
+    }
+
+    @include screen-maxHeight(740px) {
+      font-size: 3.38rem;
+    }
+
+    @include min-screen-min-width(1600px, 1100px) {
+      font-size: 7.3rem;
+    }
   }
 }
 
@@ -13,15 +32,24 @@ $font-family: "Hoefler Text, sans-serif";
   font-size: 17px;
   font-weight: 900;
   font-style: normal;
-  letter-spacing: 0px;
+  letter-spacing: 1px;
   text-align: center;
-  
+
+  @include screen-maxHeight(600px) {
+    font-size: 14px;
+    font-weight: 900;
+  }
+  @include screen-min(1600px) {
+    font-size: 1rem;
+  }
+  @include screen-xs {
+    font-size: 21px;
+  }
 }
 
 @mixin gradientText($gradient) {
   background-image: $gradient;
-  color: transparent; 
-  -webkit-background-clip: text; 
-  -webkit-text-fill-color: transparent; 
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-

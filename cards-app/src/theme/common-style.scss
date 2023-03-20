@@ -19,62 +19,6 @@
   @content;
 }
 
-@mixin cardSize {
-  $card-height: 280px;
-  $card-width: 200px;
-  @content;
-}
-
-//gradient gold border for TableStart middleContainers
-@mixin borderStyleSmallBox {
-  $border: 1px;
-  background: $backgroungFabricDescktop;
-  background-clip: padding-box;
-  border: solid $border transparent;
-  border-radius: 33px;
-
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    margin: -$border;
-    border-radius: inherit;
-    background: $borderGradientColor;
-  }
-}
-@mixin borderStyleMediumBox {
-  $border: 1px;
-  background: $backgroungFabricDescktop;
-  background-clip: padding-box;
-  border: solid $border transparent;
-  border-radius: 37px;
-  padding: 7px;
-}
-@mixin borderStyleBigBox {
-  $border: 1px;
-  background: $borderGradientColor;
-  background-clip: padding-box;
-  border: solid $border transparent;
-  border-radius: 37px;
-
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    margin: -$border;
-    border-radius: inherit;
-    background: $borderGradientColor;
-  }
-}
-
 //table shadows with gradient for TableStart & PlayStart
 @mixin gradientTopDown {
   &::before,
@@ -129,7 +73,20 @@
   }
 }
 
-@mixin cardStyle {
-  @include cardSize;
+@mixin cardStyle($max-width: 450px, $max-height: 920px) {
+  height: 280px;
+  width: 200px;
   box-shadow: $cardsShadowMiddle;
+
+  @media (max-width: #{$max-width}) and (max-height: #{$max-height}) {
+    height: 239.8px;
+    width: 171.29px;
+  }
+
+  @content;
+}
+
+@mixin buttonPadding($padding) {
+  padding-left: $padding;
+  padding-right: $padding;
 }

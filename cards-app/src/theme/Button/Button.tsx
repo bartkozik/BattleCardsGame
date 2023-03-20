@@ -20,19 +20,15 @@ const Button = ({ onClick, buttonText, href }: ButtonProps): JSX.Element => {
 
   if (href) {
     return (
-      <div className={styles.buttonBackground}>
         <NavLink to={href} className={styles.button}>
           {buttonText}
         </NavLink>
-      </div>
     );
   } else {
     return (
-      <div className={styles.buttonBackground}>
         <button className={styles.button} onClick={onClick}>
           {buttonText}
         </button>
-      </div>
     );
   }
 };

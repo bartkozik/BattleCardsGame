@@ -2,37 +2,75 @@
 
 .cards {
   @include flex-container;
+  @include cardStyle;
   position: absolute;
-  top: 744px;
-  left: 406px;
+  z-index: 2;
+  bottom: -123.93px;
+  left: 28.19%;
 
   @include screen-sm {
-    left: 135px;
+    left: 15%;
   }
-
   @include screen-xs {
-    top: 671.52px;
     left: 13.32px;
+    top: 75vh;
+  }
+  //iphoneSE
+  @include tabletMax(375px, 667px) {
+    left: 6px;
+  }
+  //smsng s20
+  @include tabletMax(412px, 915px) {
+    left: 27px;
+  }
+  //surface duo
+  @include tabletMax(540px, 720px) {
+    left: 15%;
+  }
+  //fold
+  @include tabletMax(280px, 653px) {
+    left: 0px;
+    bottom: 150px;
+  }
+  //nestHub
+  @include tabletMax(1024px, 600px) {
+    left: 20%;
+    bottom: -180px;
   }
 
   img {
     @include cardStyle;
     position: absolute;
-    top: 4px;
+    top: 5px;
+    left: 1px;
     z-index: 2;
 
     @include screen-xs {
       top: 3.43px;
     }
+    @include mobileFlipMax(360px, 740px) {
+      top: 3.43px;
+      left: 6px;
+    }
+    //iphone12-Galaxy
+    @include mobileFlip(412px, 915px) {
+      left: 0px;
+    }
+    @include tabletMax(360px, 740px) {
+      left: 0px;
+    }
 
     &:nth-child(2) {
       z-index: 3;
-      left: 81px;
       top: 10px;
+      left: 81px;
 
       @include screen-xs {
         top: 8.56px;
-        left: 69.38px;
+        left: 68.38px;
+      }
+      @include mobileFlipMax(280px, 653px) {
+        left: 35px;
       }
     }
 
@@ -42,7 +80,13 @@
       top: 0px;
 
       @include screen-xs {
-        left: 145.1px;
+        left: 144.1px;
+      }
+      @include mobileFlipMax(360px, 740px) {
+        left: 114px;
+      }
+      @include mobileFlipMax(280px, 653px) {
+        left: 72px;
       }
     }
 
@@ -53,7 +97,26 @@
 
       @include screen-xs {
         top: 13.7px;
-        left: 208px;
+        left: 217px;
+      }
+      @include mobileFlipMax(360px, 740px) {
+        top: 13.7px;
+        left: 150px;
+      }
+      @include mobileFlipMax(280px, 653px) {
+        left: 103px;
+        top: 20px;
+      }
+      //iphone12-Galaxy
+      @include mobileFlipMax(412px, 915px) {
+        left: 190px;
+      }
+      @include tabletMax(360px, 740px) {
+        left: 160px;
+      }
+      //fold
+      @include tabletMax(280px, 653px) {
+        left: 103px;
       }
     }
 
@@ -64,7 +127,10 @@
 
       @include screen-xs {
         top: 102.43px;
-        left: 50.35px;
+        left: 48.35px;
+      }
+      @include mobileFlipMax(280px, 653px) {
+        left: 20px;
       }
     }
 
@@ -74,8 +140,11 @@
       left: 428px;
 
       @include screen-xs {
-        top: 105px;
-        left: 153.56px;
+        top: 104px;
+        left: 149.56px;
+      }
+      @include mobileFlipMax(280px, 653px) {
+        left: 100px;
       }
     }
   }

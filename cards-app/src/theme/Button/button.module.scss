@@ -5,8 +5,7 @@
   @include text;
   @include gradientText($buttonTextGradient);
   position: relative;
-  max-height: 39px;
-  min-height: 39px;
+  height: 39px;
   border-radius: 8px;
   overflow: hidden;
   padding-left: 27px;

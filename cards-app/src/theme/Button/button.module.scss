@@ -5,7 +5,8 @@
   @include text;
   @include gradientText($buttonTextGradient);
   position: relative;
-  height: 39px;
+  max-height: 39px;
+  min-height: 39px;
   border-radius: 8px;
   overflow: hidden;
   padding-left: 27px;
@@ -35,10 +36,5 @@
     padding-left: 39px;
     padding-right: 39px;
     height: 45px;
-  }
-
-  @include min-screen-min-width(1600px, 1100px) {
-    padding-left: 45px;
-    padding-right: 45px;
   }
 }

@@ -40,16 +40,17 @@
 
   img {
     @include cardStyle;
+    @include randomCardDraw(5px);
+    box-shadow: $cardsShadowMiddle;
     position: absolute;
-    top: 5px;
     left: 1px;
     z-index: 2;
 
     @include screen-xs {
-      top: 3.43px;
+      @include randomCardDraw(3.43px);
     }
     @include mobileFlipMax(360px, 740px) {
-      top: 3.43px;
+      @include randomCardDraw(3.43px);
       left: 6px;
     }
     //iphone12-Galaxy
@@ -61,12 +62,12 @@
     }
 
     &:nth-child(2) {
+      box-shadow: $cardsShadowMiddle;
       z-index: 3;
-      top: 10px;
       left: 81px;
 
       @include screen-xs {
-        top: 8.56px;
+        @include randomCardDraw(8.56px);
         left: 68.38px;
       }
       @include mobileFlipMax(280px, 653px) {
@@ -75,9 +76,9 @@
     }
 
     &:nth-child(3) {
+      box-shadow: $cardsShadowMiddle;
       z-index: 4;
       left: 169.28px;
-      top: 0px;
 
       @include screen-xs {
         left: 144.1px;
@@ -91,21 +92,21 @@
     }
 
     &:nth-child(4) {
+      box-shadow: $cardsShadowMiddle;
       z-index: 5;
-      top: 16px;
       left: 252.32px;
 
       @include screen-xs {
-        top: 13.7px;
+        @include randomCardDraw(13.7px);
         left: 217px;
       }
       @include mobileFlipMax(360px, 740px) {
-        top: 13.7px;
+        @include randomCardDraw(13.7px);
         left: 150px;
       }
       @include mobileFlipMax(280px, 653px) {
+        @include randomCardDraw(20px);
         left: 103px;
-        top: 20px;
       }
       //iphone12-Galaxy
       @include mobileFlipMax(412px, 915px) {
@@ -121,30 +122,47 @@
     }
 
     &:nth-child(5) {
+      box-shadow: $cardsShadowMiddle;
       z-index: 6;
-      top: 4px;
       left: 309.8px;
 
       @include screen-xs {
-        top: 102.43px;
-        left: 48.35px;
+        top: 84.43px;
+        left: 10px;
       }
       @include mobileFlipMax(280px, 653px) {
+        @include randomCardDrawMobile(102.43px);
         left: 20px;
+        top: 72.43px;
       }
     }
 
     &:nth-child(6) {
+      box-shadow: $cardsShadowMiddle;
       z-index: 7;
-      top: 7px;
       left: 428px;
 
       @include screen-xs {
-        top: 104px;
-        left: 149.56px;
+        left: 60.56px;
       }
       @include mobileFlipMax(280px, 653px) {
+        top: 84px;
         left: 100px;
+      }
+    }
+
+    @for $i from 7 through 20 {
+      &:nth-child(#{$i}) {
+        top: $i + 5px;
+        box-shadow: $cardsShadowMiddle;
+        z-index: $i + 1;
+        left: ((($i - 2) * 70px) + 156.5px);
+
+        @include screen-xs {
+          
+          
+          left: ((($i - 2) * 6px) + 140.5px);
+        }
       }
     }
   }

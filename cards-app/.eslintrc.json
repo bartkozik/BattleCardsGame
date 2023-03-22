@@ -6,8 +6,7 @@
   },
   "extends": [
     "eslint:recommended",
-    "react-app",
-    "react-app/jest",
+    "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended"
   ],
@@ -17,12 +16,9 @@
     "ecmaFeatures": {
       "jsx": true
     },
-    "ecmaVersion": "latest",
-    "sourceType": "module",
-    "project": "./tsconfig.json"
+    "ecmaVersion": 12,
+    "sourceType": "module"
   },
   "plugins": ["react", "@typescript-eslint"],
-  "rules": {
-    "react/react-in-jsx-scope": "off"
-  }
+  "rules": {}
 }

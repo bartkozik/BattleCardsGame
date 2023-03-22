@@ -10,14 +10,12 @@ interface UnflippedCardsComponentProps {
   position: "top" | "left" | "right";
 }
 
-const UnflippedCardsComponent = ({
-  position,
-}: UnflippedCardsComponentProps): JSX.Element => {
+const UnflippedCardsComponent = ({ position }: UnflippedCardsComponentProps): JSX.Element => {
   const cardImages: CardReverse[] = Array.from({
-    length: CARD_COUNT,
+    length: CARD_COUNT
   }).map<CardReverse>(() => ({
     suit: "card",
-    rank: "reversUnlight",
+    rank: "reversUnlight"
   }));
 
   return (

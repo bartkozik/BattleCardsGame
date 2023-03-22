@@ -12,25 +12,21 @@ const PlayTable = (): JSX.Element => {
       <div className={styles.gradientLeftRight}>
         <div className={styles.tableBackgroundPlay} />
         <div className={styles.exitContainer}>
-          <Button href='/' buttonText='Exit' />
+          <Button href="/" buttonText="Exit" />
         </div>
-        <UnflippedCardsComponent position='top' />
-        <UnflippedCardsComponent position='left' />
-        <UnflippedCardsComponent position='right' />
+        <UnflippedCardsComponent position="top" />
+        <UnflippedCardsComponent position="left" />
+        <UnflippedCardsComponent position="right" />
         <div className={styles.centerContainer}>
           <div className={styles.deckContainer}>
-            <img
-              className='card-back'
-              src='/cards/card-revers.png'
-              alt='Card back'
-            />
+            <img className="card-back" src="/cards/card-revers.png" alt="Card back" />
           </div>
-          <div className='card-from-deck'>{/* karta z góry talii */}</div>
+          <div className="card-from-deck">{/* karta z góry talii */}</div>
           <div className={styles.middleContainer}>
             {/* Karty spalone w grze */}
-            <img className='card-back' src='/cards/JOKER.png' alt='Card back' />
-            <img className='card-back' src='/cards/JOKER.png' alt='Card back' />
-            <img className='card-back' src='/cards/JOKER.png' alt='Card back' />
+            <img className="card-back" src="/cards/JOKER.png" alt="Card back" />
+            <img className="card-back" src="/cards/JOKER.png" alt="Card back" />
+            <img className="card-back" src="/cards/JOKER.png" alt="Card back" />
           </div>
         </div>
         <CardOnHand />

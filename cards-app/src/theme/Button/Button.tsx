@@ -9,9 +9,7 @@ interface ButtonProps {
 }
 
 const Button = ({ onClick, buttonText, href }: ButtonProps): JSX.Element => {
-  const handleClick = (
-    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-  ): void => {
+  const handleClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>): void => {
     if (onClick) {
       event.preventDefault();
       onClick();

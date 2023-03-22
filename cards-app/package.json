@@ -29,7 +29,8 @@
     "eject": "react-scripts eject",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "build:sass": "node-sass src/styles/main.scss dist/styles/main.css"
+    "build:sass": "node-sass src/styles/main.scss dist/styles/main.css",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
   "eslintConfig": {
     "extends": [
@@ -55,9 +56,12 @@
     "@typescript-eslint/parser": "^5.52.0",
     "css-loader": "^6.7.3",
     "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "file-loader": "^6.2.0",
     "node-sass": "^7.0.3",
+    "prettier": "^2.8.6",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1"
   }

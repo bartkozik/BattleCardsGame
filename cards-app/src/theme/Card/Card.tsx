@@ -11,12 +11,10 @@ export type CardComponentProps = {
 const CardComponent = ({
   drawnCard,
   isFront,
-  translatedToTopOnMobile = false,
+  translatedToTopOnMobile = false
 }: CardComponentProps): JSX.Element => {
   const { suit, rank } = drawnCard;
-  const cardImage = isFront
-    ? `/cards/${rank}-${suit}.png`
-    : "/cards/card-reversUnlight.png";
+  const cardImage = isFront ? `/cards/${rank}-${suit}.png` : "/cards/card-reversUnlight.png";
 
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
@@ -25,18 +23,10 @@ const CardComponent = ({
     const maxValue = 30;
     const offset = isMobile ? (translatedToTopOnMobile ? 30 : 130) : 30;
 
-    return `${
-      Math.floor(Math.random() * (maxValue - minValue + 1)) + offset
-    }px`;
+    return `${Math.floor(Math.random() * (maxValue - minValue + 1)) + offset}px`;
   };
 
-  return (
-    <img
-      style={{ top: generateRandomTopValue() }}
-      src={cardImage}
-      alt={`${rank}-${suit}`}
-    />
-  );
+  return <img style={{ top: generateRandomTopValue() }} src={cardImage} alt={`${rank}-${suit}`} />;
 };
 
 export default CardComponent;

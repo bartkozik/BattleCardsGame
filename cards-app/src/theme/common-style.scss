@@ -76,7 +76,6 @@
 @mixin cardStyle($max-width: 450px, $max-height: 920px) {
   height: 280px;
   width: 200px;
-  box-shadow: $cardsShadowMiddle;
 
   @media (max-width: #{$max-width}) and (max-height: #{$max-height}) {
     height: 239.8px;
@@ -86,7 +85,9 @@
   @content;
 }
 
-@mixin buttonPadding($padding) {
-  padding-left: $padding;
-  padding-right: $padding;
+@mixin randomCardDraw($topValue: 0px) {
+  top: calc(#{$topValue} + #{random(10)}% - 0px);
+}
+@mixin randomCardDrawMobile($topValue: 0px) {
+  top: calc(#{$topValue} + 750px);
 }

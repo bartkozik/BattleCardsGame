@@ -7,22 +7,14 @@ $font-family: "Hoefler Text, sans-serif";
     text-align: center;
 
     @include screen-xs {
-      font-size: 5rem;
+      font-size: 4rem;
     }
     @include screen-range(768px, 900px) {
       margin-top: 15%;
     }
 
-    @include screen-range(280px, 500px) {
-      font-size: 4.38rem;
-    }
-
     @include screen-maxHeight(740px) {
       font-size: 3.38rem;
-    }
-
-    @include min-screen-min-width(1600px, 1100px) {
-      font-size: 7.3rem;
     }
   }
 }
@@ -34,16 +26,9 @@ $font-family: "Hoefler Text, sans-serif";
   font-style: normal;
   letter-spacing: 1px;
   text-align: center;
-
-  @include screen-maxHeight(600px) {
-    font-size: 14px;
-    font-weight: 900;
-  }
-  @include screen-min(1600px) {
-    font-size: 1rem;
-  }
+  
   @include screen-xs {
-    font-size: 21px;
+    font-size: 15px;
   }
 }
 

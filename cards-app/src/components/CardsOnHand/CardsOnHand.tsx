@@ -1,39 +1,26 @@
-import React, { useContext, useState } from "react";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+import React, { useContext } from "react";
 import { CardContext } from "App";
-import CardComponent from "theme/Card/Card";
+import CardComponent from "theme/Card";
+import { CARD_COUNT } from "utils/constants";
+
 import styles from "./CardsOnHand.module.scss";
 
-const SlicedCards = 6;
-
-const CardOnHand = (): JSX.Element => {
-  const [areCardsShown, setAreCardsShown] = useState(true);
+const CardsOnHand = (): JSX.Element => {
   const cardContext = useContext(CardContext);
-
-  const handleOnClick = (): void => {
-    setAreCardsShown(true);
-  };
+  const slicedCards = cardContext.slice(0, CARD_COUNT);
 
   return (
-    <div className={styles.cards} onClick={handleOnClick}>
-      <TransitionGroup>
-        {areCardsShown && (
-          <>
-            {cardContext.slice(0, SlicedCards).map((card, index) => (
-              <CSSTransition
-                key={index}
-                timeout={700}
-                classNames="card"
-                appear={true}
-              >
-                <CardComponent isFront drawnCard={card} />
-              </CSSTransition>
-            ))}
-          </>
-        )}
-      </TransitionGroup>
+    <div className={styles.cards}>
+      {slicedCards.map((card, i) => (
+        <CardComponent
+          key={i}
+          isFront
+          drawnCard={card}
+          translatedToTopOnMobile={i < slicedCards.length - 3}
+        />
+      ))}
     </div>
   );
 };
 
-export default CardOnHand;
+export default CardsOnHand;

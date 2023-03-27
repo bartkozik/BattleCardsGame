@@ -9,7 +9,7 @@
   left: 28.19%;
 
   @include screen-sm {
-    left: 15%;
+    left: 10%;
   }
   @include screen-xs {
     left: 13.32px;
@@ -34,8 +34,11 @@
   }
   //nestHub
   @include tabletMax(1024px, 600px) {
-    left: 20%;
+    left: 15%;
     bottom: -180px;
+  }
+  @include tabletMax(768px, 1024px) {
+    left: 5%;
   }
 
   img {

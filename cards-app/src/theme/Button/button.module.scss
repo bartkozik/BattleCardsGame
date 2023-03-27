@@ -7,6 +7,7 @@
   position: relative;
   height: 39px;
   border-radius: 8px;
+  border: none;
   overflow: hidden;
   padding-left: 27px;
   padding-right: 27px;
@@ -29,6 +30,11 @@
   &:active {
     @include gradientText($buttonTextGradienHover);
     box-shadow: $hoverButtonShadow;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
   }
 
   @include screen-xs {

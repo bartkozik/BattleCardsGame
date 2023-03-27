@@ -1,7 +1,6 @@
 import api from "api";
-import { AxiosResponse } from "axios";
+import { DeckResponse } from "./models";
 
-export function createNewDeck(): Promise<AxiosResponse<any>> {
-  // 'any' to be typed properly
+export function createNewDeck(): Promise<DeckResponse> {
   return api.post("/deck/new/");
 }

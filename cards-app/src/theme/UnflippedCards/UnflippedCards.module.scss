@@ -70,7 +70,7 @@
     }
     @include tablet(768px, 1024px) {
       left: -350px;
-      top: 40px;
+      top: 0px;
     }
     //iPad
     @include tabletMax(820px, 1180px) {
@@ -145,7 +145,7 @@
     }
     @include tablet(768px, 1024px) {
       right: -360px;
-      top: 40px;
+      top: 0px;
     }
     @include tabletMax(820px, 1180px) {
       right: -360px;
@@ -184,8 +184,7 @@
       display: none;
     }
     @include tablet(768px, 1024px) {
-      left: 130px;
-      top: -140px;
+      display: none;
     }
     @include tabletMax(820px, 1180px) {
       left: 125px;

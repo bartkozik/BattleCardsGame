@@ -14,7 +14,7 @@ const TableStart = observer(() => {
   const messageError = "Ooops!!! Something went wrong!!!";
   const navigate = useNavigate();
 
-  const createDeck = async (): Promise<void> => {
+  const createDeck = (): void => {
     createNewDeck().then(() => {
       navigate("/table");
     });

@@ -5,6 +5,18 @@ export interface Deck {
   deck_id: string;
   shuffled: boolean;
   remaining: number;
+  cards: Card[] | [];
 }
 
-export type DeckResponse = AxiosResponse<DeckResponse>;
+export type Card = {
+  code: string;
+  image: string;
+  images: {
+    svg: string;
+    png: string;
+  };
+  value: string;
+  suit: string;
+}
+
+export type DeckResponse = AxiosResponse<Deck>;

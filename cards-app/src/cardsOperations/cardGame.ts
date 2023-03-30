@@ -12,8 +12,8 @@ export const playWar = (player1Deck: Card[], player2Deck: Card[]): void => {
     const [card1, remainingPlayer1Deck] = drawCard(player1Deck);
     const [card2, remainingPlayer2Deck] = drawCard(player2Deck);
 
-    alert(`Player 1 drew ${card1.rank}${card1.suit}`);
-    alert(`Player 2 drew ${card2.rank}${card2.suit}`);
+    alert(`Player 1 drew ${card1.value}${card1.suit}`);
+    alert(`Player 2 drew ${card2.value}${card2.suit}`);
 
     const compareResult = compareCards(card1, card2);
 
@@ -40,8 +40,8 @@ export const playWar = (player1Deck: Card[], player2Deck: Card[]): void => {
 };
 
 export const compareCards = (card1: Card, card2: Card): number => {
-  const rank1 = getRankValue(card1.rank);
-  const rank2 = getRankValue(card2.rank);
+  const rank1 = getRankValue(card1.value);
+  const rank2 = getRankValue(card2.value);
 
   if (rank1 > rank2) {
     return 1;

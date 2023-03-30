@@ -5,7 +5,7 @@ export function createNewDeck(): Card[] {
 
   const ranks: Rank[] = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
   const deck: Card[] = suits.reduce((cards: Card[], suit) => {
-    const suitCards = ranks.map((rank) => ({ suit, rank }));
+    const suitCards = ranks.map((value) => ({ suit, value }));
     return [...cards, ...suitCards];
   }, []);
 
@@ -35,8 +35,8 @@ export const sortDeck = (deck: Card[]): Card[] => {
     } else if (a.suit > b.suit) {
       return 1;
     } else {
-      const rankA = isNaN(Number(a.rank)) ? a.rank.charCodeAt(0) : Number(a.rank);
-      const rankB = isNaN(Number(b.rank)) ? b.rank.charCodeAt(0) : Number(b.rank.charCodeAt(0));
+      const rankA = isNaN(Number(a.value)) ? a.value.charCodeAt(0) : Number(a.value);
+      const rankB = isNaN(Number(b.value)) ? b.value.charCodeAt(0) : Number(b.value.charCodeAt(0));
       return rankA - rankB;
     }
   });

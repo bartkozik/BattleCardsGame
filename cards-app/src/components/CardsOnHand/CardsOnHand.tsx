@@ -1,13 +1,14 @@
-import React, { useContext } from "react";
-import { CardContext } from "App";
+import React from "react";
+import { useStores } from "RootStore";
 import CardComponent from "theme/Card";
 import { CARD_COUNT } from "utils/constants";
 
 import styles from "./CardsOnHand.module.scss";
 
 const CardsOnHand = (): JSX.Element => {
-  const cardContext = useContext(CardContext);
-  const slicedCards = cardContext.slice(0, CARD_COUNT);
+  const { deckStore } = useStores();
+  const { cards } = deckStore;
+  const slicedCards = cards.slice(0, CARD_COUNT);
 
   return (
     <div className={styles.cards}>

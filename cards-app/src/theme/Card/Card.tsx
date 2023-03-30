@@ -1,6 +1,7 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
-import { Card, CardReverse } from "types";
+import { CardReverse } from "types";
+import { Card } from "deck/models";
 
 export type CardComponentProps = {
   drawnCard: Card | CardReverse;
@@ -13,8 +14,8 @@ const CardComponent = ({
   isFront,
   translatedToTopOnMobile = false
 }: CardComponentProps): JSX.Element => {
-  const { suit, rank } = drawnCard;
-  const cardImage = isFront ? `/cards/${rank}-${suit}.png` : "/cards/card-reversUnlight.png";
+  const { suit, value, image } = drawnCard;
+  const cardImage = isFront ? image : "/cards/card-reversUnlight.png";
 
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
@@ -26,7 +27,7 @@ const CardComponent = ({
     return `${Math.floor(Math.random() * (maxValue - minValue + 1)) + offset}px`;
   };
 
-  return <img style={{ top: generateRandomTopValue() }} src={cardImage} alt={`${rank}-${suit}`} />;
+  return <img style={{ top: generateRandomTopValue() }} src={cardImage} alt={`${value}-${suit}`} />;
 };
 
 export default CardComponent;

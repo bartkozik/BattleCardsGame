@@ -15,7 +15,7 @@ const UnflippedCardsComponent = ({ position }: UnflippedCardsComponentProps): JS
     length: CARD_COUNT
   }).map<CardReverse>(() => ({
     suit: "card",
-    rank: "reversUnlight"
+    value: "reversUnlight"
   }));
 
   return (

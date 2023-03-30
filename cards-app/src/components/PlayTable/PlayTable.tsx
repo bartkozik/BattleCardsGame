@@ -1,12 +1,17 @@
 import React from "react";
 import cx from "clsx";
+import { useStores } from "RootStore";
 import Button from "theme/Button";
 import UnflippedCardsComponent from "theme/UnflippedCards";
+import CardLoader from "theme/CardLoader";
+import CardsOnHand from "../CardsOnHand";
 
 import styles from "./PlayTable.module.scss";
-import CardOnHand from "../CardsOnHand";
 
 const PlayTable = (): JSX.Element => {
+  const { deckStore } = useStores();
+  const { cardsLoading, error } = deckStore;
+
   return (
     <div className={cx(styles.table, styles.gradientTopDown)}>
       <div className={styles.gradientLeftRight}>
@@ -29,7 +34,7 @@ const PlayTable = (): JSX.Element => {
             <img className="card-back" src="/cards/JOKER.png" alt="Card back" />
           </div>
         </div>
-        <CardOnHand />
+        {cardsLoading || error !== null ? <CardLoader /> : <CardsOnHand />}
       </div>
     </div>
   );

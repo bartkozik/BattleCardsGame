@@ -1,14 +1,15 @@
 import React from "react";
 import { useStores } from "RootStore";
+import { observer } from "mobx-react-lite";
 import CardComponent from "theme/Card";
-import { CARD_COUNT } from "utils/constants";
+import { PLAYER_CARDS_COUNT } from "utils/constants";
 
 import styles from "./CardsOnHand.module.scss";
 
-const CardsOnHand = (): JSX.Element => {
+const CardsOnHand = observer((): JSX.Element => {
   const { deckStore } = useStores();
-  const { cards } = deckStore;
-  const slicedCards = cards.slice(0, CARD_COUNT);
+  const { playerCards } = deckStore;
+  const slicedCards = playerCards.slice(0, PLAYER_CARDS_COUNT);
 
   return (
     <div className={styles.cards}>
@@ -17,11 +18,11 @@ const CardsOnHand = (): JSX.Element => {
           key={i}
           isFront
           drawnCard={card}
-          translatedToTopOnMobile={i < slicedCards.length - 3}
+          translatedToTopOnMobile={i < slicedCards.length}
         />
       ))}
     </div>
   );
-};
+});
 
 export default CardsOnHand;

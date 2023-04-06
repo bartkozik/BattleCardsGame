@@ -9,36 +9,25 @@
   left: 28.19%;
 
   @include screen-sm {
-    left: 10%;
+    left: 0;
   }
   @include screen-xs {
-    left: 13.32px;
+    left: 5%;
     top: 75vh;
   }
   //iphoneSE
-  @include tabletMax(375px, 667px) {
-    left: 6px;
+  @include tabletMax(360px, 740px) {
+    left: 0;
   }
-  //smsng s20
-  @include tabletMax(412px, 915px) {
-    left: 27px;
-  }
-  //surface duo
-  @include tabletMax(540px, 720px) {
-    left: 15%;
-  }
-  //fold
+  // //fold
   @include tabletMax(280px, 653px) {
-    left: 0px;
+    left: -20px;
     bottom: 150px;
   }
   //nestHub
   @include tabletMax(1024px, 600px) {
     left: 15%;
     bottom: -180px;
-  }
-  @include tabletMax(768px, 1024px) {
-    left: 5%;
   }
 
   img {
@@ -49,122 +38,27 @@
     left: 1px;
     z-index: 2;
 
-    @include screen-xs {
-      @include randomCardDraw(3.43px);
-    }
-    @include mobileFlipMax(360px, 740px) {
-      @include randomCardDraw(3.43px);
-      left: 6px;
-    }
-    //iphone12-Galaxy
-    @include mobileFlip(412px, 915px) {
-      left: 0px;
-    }
-    @include tabletMax(360px, 740px) {
-      left: 0px;
+    &:not(:last-child) {
+      filter: blur(4px);
     }
 
-    &:nth-child(2) {
-      box-shadow: $cardsShadowMiddle;
-      z-index: 3;
-      left: 81px;
-
-      @include screen-xs {
-        @include randomCardDraw(8.56px);
-        left: 68.38px;
-      }
-      @include mobileFlipMax(280px, 653px) {
-        left: 35px;
-      }
-    }
-
-    &:nth-child(3) {
-      box-shadow: $cardsShadowMiddle;
-      z-index: 4;
-      left: 169.28px;
-
-      @include screen-xs {
-        left: 144.1px;
-      }
-      @include mobileFlipMax(360px, 740px) {
-        left: 114px;
-      }
-      @include mobileFlipMax(280px, 653px) {
-        left: 72px;
-      }
-    }
-
-    &:nth-child(4) {
-      box-shadow: $cardsShadowMiddle;
-      z-index: 5;
-      left: 252.32px;
-
-      @include screen-xs {
-        @include randomCardDraw(13.7px);
-        left: 217px;
-      }
-      @include mobileFlipMax(360px, 740px) {
-        @include randomCardDraw(13.7px);
-        left: 150px;
-      }
-      @include mobileFlipMax(280px, 653px) {
-        @include randomCardDraw(20px);
-        left: 103px;
-      }
-      //iphone12-Galaxy
-      @include mobileFlipMax(412px, 915px) {
-        left: 190px;
-      }
-      @include tabletMax(360px, 740px) {
-        left: 160px;
-      }
-      //fold
-      @include tabletMax(280px, 653px) {
-        left: 103px;
-      }
-    }
-
-    &:nth-child(5) {
-      box-shadow: $cardsShadowMiddle;
-      z-index: 6;
-      left: 309.8px;
-
-      @include screen-xs {
-        top: 84.43px;
-        left: 10px;
-      }
-      @include mobileFlipMax(280px, 653px) {
-        @include randomCardDrawMobile(102.43px);
-        left: 20px;
-        top: 72.43px;
-      }
-    }
-
-    &:nth-child(6) {
-      box-shadow: $cardsShadowMiddle;
-      z-index: 7;
-      left: 428px;
-
-      @include screen-xs {
-        left: 60.56px;
-      }
-      @include mobileFlipMax(280px, 653px) {
-        top: 84px;
-        left: 100px;
-      }
-    }
-
-    @for $i from 7 through 20 {
+    @for $i from 1 through 26 {
       &:nth-child(#{$i}) {
         top: $i + 5px;
         box-shadow: $cardsShadowMiddle;
         z-index: $i + 1;
-        left: ((($i - 2) * 70px) + 156.5px);
+        left: ((($i - 2) * 5px) + 156.5px);
+
+        @include screen-lg {
+          left: ((($i - 2) * 13px) + 30.5px);
+        }
 
         @include screen-xs {
-          
-          
-          left: ((($i - 2) * 6px) + 140.5px);
+          left: ((($i - 2) * 6px) + 30.5px);
+        }
+
+        @include tabletMax(280px, 653px) {
+          left: ((($i - 3) * 4px) + 30.5px);
         }
       }
     }

@@ -7,12 +7,14 @@ export type CardComponentProps = {
   drawnCard: Card | CardReverse;
   isFront?: boolean;
   translatedToTopOnMobile?: boolean;
+  onClick?: () => void;
 };
 
 const CardComponent = ({
   drawnCard,
   isFront,
-  translatedToTopOnMobile = false
+  translatedToTopOnMobile = false,
+  onClick
 }: CardComponentProps): JSX.Element => {
   const { suit, value, image } = drawnCard;
   const cardImage = isFront ? image : "/cards/card-reversUnlight.png";
@@ -27,7 +29,14 @@ const CardComponent = ({
     return `${Math.floor(Math.random() * (maxValue - minValue + 1)) + offset}px`;
   };
 
-  return <img style={{ top: generateRandomTopValue() }} src={cardImage} alt={`${value}-${suit}`} />;
+  return (
+    <img
+      onClick={onClick}
+      style={{ top: generateRandomTopValue() }}
+      src={cardImage}
+      alt={`${value}-${suit}`}
+    />
+  );
 };
 
 export default CardComponent;

@@ -1,6 +1,6 @@
 $primaryColor: linear-gradient(180deg, rgb(58, 113, 92) 0%, rgb(14, 56, 45) 100%);
 
-$backgroungFabricDescktop: url("../../public/cards/fabric_texture_green-1.png");
+$backgroundFabricDescktop: url("../../public/cards/fabric_texture_green-1.png");
 $backgroundPatern: url("../../public/cards/Fill_1-1.png");
 $backgroundPaternMobile: url("../../public/cards/Fill_Mobile.png");
 
@@ -54,6 +54,8 @@ $deckShadow: -6px -10px 15px 0 rgba(222, 255, 194, 0.04), 30px 30px 13px 0 rgba(
 // text colors & shadows
 $textShadow: 2px 2px 7px rgba(248, 226, 184, 0.11), -1px -1px 0 rgba(0, 0, 0, 0.5);
 
+$scoreBoard: rgb(196, 172, 41);
+
 $textColorGradient: linear-gradient(
   270deg,
   rgb(95, 85, 50) 0%,
@@ -76,3 +78,9 @@ $borderStartColor: rgb(186, 175, 129);
 
 $errorColor: linear-gradient(to right, rgba(255, 80, 80, 0.8), rgba(255, 120, 120, 0.8));
 $toast: white;
+
+//loader
+$loaderGreen: rgba(190, 221, 190, 0.9);
+$spinnerGreen: green;
+$spinnerBackgroud: white;
+$spinnerInside: green;

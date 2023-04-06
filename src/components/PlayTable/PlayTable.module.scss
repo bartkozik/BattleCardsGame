@@ -5,7 +5,7 @@
   position: relative;
   min-height: 100vh;
   overflow: hidden;
-  background: $backgroungFabricDescktop;
+  background: $backgroundFabricDescktop;
 
   &BackgroundPlay {
     position: absolute;
@@ -88,6 +88,7 @@
     .deckContainer {
       position: relative;
       object-fit: cover;
+      z-index: 2;
 
       @include screen-lg {
         left: 149.6%;
@@ -112,38 +113,7 @@
       img {
         @include cardStyle;
         box-shadow: $deckShadow;
-      }
-    }
-
-    .middleContainer {
-      position: relative;
-      box-shadow: 29px 45px 19px 0 rgba(0, 0, 0, 0.24);
-      padding: 0;
-
-      @include screen-xs {
-        top: 21px;
-        left: 15px;
-      }
-
-      img {
-        position: absolute;
-        @include cardStyle;
-        box-shadow: $middleCardsShadow1;
-        transform: rotate(0deg);
-        top: -144px;
-        left: -196px;
-
-        &:nth-child(2) {
-          z-index: 1;
-          transform: rotate(0deg);
-          box-shadow: $middleCardsShadow2;
-        }
-
-        &:nth-child(3) {
-          z-index: 2;
-          transform: rotate(-16deg);
-          box-shadow: $middleCardsShadow3;
-        }
+        z-index: 2;
       }
     }
   }

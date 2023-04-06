@@ -5,9 +5,20 @@ $font-family: "Hoefler Text, sans-serif";
     font-weight: 400;
     font-size: 87px;
     text-align: center;
+    @include flex-container(center, center);
+    position: relative;
+    background: $textColorGradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+
+    @include screen-maxHeight(500px) {
+      margin-top: 5%;
+      margin-bottom: 1%;
+    }
 
     @include screen-xs {
-      font-size: 4rem;
+      font-size: 3.3rem;
     }
     @include screen-range(768px, 900px) {
       margin-top: 15%;
@@ -26,7 +37,7 @@ $font-family: "Hoefler Text, sans-serif";
   font-style: normal;
   letter-spacing: 1px;
   text-align: center;
-  
+
   @include screen-xs {
     font-size: 15px;
   }

@@ -1,0 +1,39 @@
+@import "theme/common-style.scss";
+
+.scoreBoard {
+  @include flex-container(center, center, column);
+  @include text;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  color: $scoreBoard;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: $buttonShadow;
+  background: $primaryColor;
+  animation: fadeIn 1s ease;
+  display: inline-block;
+  z-index: 9999;
+
+  @include screen-xs {
+    top: 5px;
+    right: 5px;
+  }
+
+  span {
+    display: inline-block;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

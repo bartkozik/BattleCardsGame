@@ -1,0 +1,28 @@
+@import "theme/common-style.scss";
+
+.burnedCards {
+  position: relative;
+  top: -180px;
+  box-shadow: $middleCardsShadow1;
+  z-index: 1;
+
+  @include screen-xs {
+    top: -205px;
+  }
+
+  img {
+    position: absolute;
+    @include cardStyle;
+    transform: rotate(0deg);
+    top: -144px;
+    left: -196px;
+    z-index: -1;
+    pointer-events: none;
+
+    @for $i from 1 through 52 {
+      &:nth-child(#{$i}) {
+        transform: translateY(-#{0.1 * $i}px) rotate(#{-0.5 * $i}deg);
+      }
+    }
+  }
+}

@@ -17,6 +17,11 @@ export type Card = {
   };
   value: string;
   suit: string;
-}
+};
+
+export type GameCards = {
+  computerCards: Card[];
+  playerCards: Card[];
+};
 
 export type DeckResponse = AxiosResponse<Deck>;

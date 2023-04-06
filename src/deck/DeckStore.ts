@@ -1,8 +1,22 @@
 import { makeAutoObservable } from "mobx";
 import { RootStore } from "RootStore";
-import { SESSION_STORAGE_KEY } from "utils/constants";
-import { DeckResponse, Card } from "./models";
+import {
+  saveToSessionStorage,
+  getFromSessionStorage,
+  removeFromSessionStorage
+} from "utils/sessionStorageHelpers";
+import {
+  COMPUTER_CARDS_STORAGE_NAME,
+  PLAYER_CARDS_STORAGE_NAME,
+  PLAYER_SCORE_STORAGE_NAME,
+  COMPUTER_SCORE_STORAGE_NAME,
+  BURNED_CARDS_STORAGE_NAME,
+  PAIRS_TO_COMPARE_STORAGE_NAME
+} from "utils/constants";
+import { DeckResponse, Card, GameCards } from "./models";
 import * as requests from "./requests";
+
+const PAIRS_TO_COMPARE = 25;
 
 class DeckStore {
   rootStore: RootStore;
@@ -12,25 +26,34 @@ class DeckStore {
   error = null;
   deckId = "";
   cards: Card[] = [];
+  computerCards: Card[] = [];
+  playerCards: Card[] = [];
+  burnedCards: Card[] = [];
+  pairsToCompare = PAIRS_TO_COMPARE;
 
   constructor(rootStore: RootStore) {
     this.rootStore = rootStore;
-    this.cards = this.getFromSessionStorage() || [];
+    const savedData = getFromSessionStorage([
+      COMPUTER_CARDS_STORAGE_NAME,
+      PLAYER_CARDS_STORAGE_NAME,
+      BURNED_CARDS_STORAGE_NAME,
+      PAIRS_TO_COMPARE_STORAGE_NAME
+    ]);
+
+    const {
+      computerCards = [],
+      playerCards = [],
+      burnedCards = [],
+      pairsToCompare = PAIRS_TO_COMPARE
+    } = savedData || {};
+
+    this.computerCards = computerCards;
+    this.playerCards = playerCards;
+    this.burnedCards = burnedCards;
+    this.pairsToCompare = pairsToCompare;
+
     makeAutoObservable(this);
   }
-
-  saveToSessionStorage = (value: Card[]): void => {
-    sessionStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify(value));
-  };
-
-  getFromSessionStorage = (): Card[] | null => {
-    const savedData = sessionStorage.getItem(SESSION_STORAGE_KEY);
-    return savedData ? JSON.parse(savedData) : null;
-  };
-
-  removeFromSessionStorage = (): void => {
-    sessionStorage.removeItem(SESSION_STORAGE_KEY);
-  };
 
   shuffleDeck = (deckId: string): Promise<DeckResponse> => {
     this.error = null;
@@ -40,7 +63,39 @@ class DeckStore {
     });
   };
 
-  fetchNewCards = (deckID: string): Promise<Card[] | void> => {
+  removeTopCards = (playerCard: Card, computerCard: Card): void => {
+    if (playerCard && computerCard) {
+      const playerCardIndex = this.playerCards.indexOf(playerCard);
+      const computerCardIndex = this.computerCards.indexOf(computerCard);
+
+      if (playerCardIndex > -1) {
+        this.playerCards.splice(playerCardIndex, 1);
+      }
+
+      if (computerCardIndex > -1) {
+        this.computerCards.splice(computerCardIndex, 1);
+      }
+
+      this.burnedCards.push(playerCard);
+      this.burnedCards.push(computerCard);
+    }
+    this.pairsToCompare -= 1;
+
+    saveToSessionStorage({
+      computerCards: this.computerCards,
+      playerCards: this.playerCards,
+      burnedCards: this.burnedCards,
+      pairsToCompare: this.pairsToCompare
+    });
+  };
+
+  splitDeck = (cards: Card[]): GameCards => {
+    const computerCards = cards.filter((_, index) => index % 2 === 0);
+    const playerCards = cards.filter((_, index) => index % 2 !== 0);
+    return { computerCards, playerCards };
+  };
+
+  fetchNewCards = (deckID: string): Promise<GameCards | void> => {
     this.error = null;
     this.cardsLoading = true;
 
@@ -48,8 +103,14 @@ class DeckStore {
       .fetchNewCards(deckID)
       .then(({ data: { cards } }) => {
         this.cards = cards;
-        this.saveToSessionStorage(this.cards);
-        return this.cards;
+        const { computerCards, playerCards } = this.splitDeck(this.cards);
+        this.computerCards = computerCards;
+        this.playerCards = playerCards;
+        saveToSessionStorage({
+          computerCards: this.computerCards,
+          playerCards: this.playerCards
+        });
+        return { computerCards: this.computerCards, playerCards: this.playerCards };
       })
       .catch((error) => {
         this.error = error;
@@ -60,17 +121,29 @@ class DeckStore {
       });
   };
 
-  createNewDeck = (): Promise<DeckResponse | void | Card[]> => {
+  createNewDeck = (): Promise<DeckResponse | void | GameCards> => {
+    removeFromSessionStorage([
+      COMPUTER_CARDS_STORAGE_NAME,
+      PLAYER_CARDS_STORAGE_NAME,
+      BURNED_CARDS_STORAGE_NAME,
+      PAIRS_TO_COMPARE_STORAGE_NAME,
+      PLAYER_SCORE_STORAGE_NAME,
+      COMPUTER_SCORE_STORAGE_NAME
+    ]);
     this.submitting = true;
     this.error = null;
+
+    this.burnedCards = [];
+    this.pairsToCompare = PAIRS_TO_COMPARE;
+    this.rootStore.gameStore.playerScore = 0;
+    this.rootStore.gameStore.computerScore = 0;
 
     return requests
       .createNewDeck()
       .then(({ data: { deck_id } }) => this.shuffleDeck(deck_id))
       .then(({ data: { deck_id } }) => {
         this.deckId = deck_id;
-        const cards = this.fetchNewCards(this.deckId);
-        return cards;
+        return this.fetchNewCards(this.deckId);
       })
       .catch((error) => {
         this.error = error;

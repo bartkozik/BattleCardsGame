@@ -1,11 +1,14 @@
 import { createContext, useContext } from "react";
 import DeckStore from "./deck";
+import GameStore from "./game";
 
 export class RootStore {
   deckStore: DeckStore;
+  gameStore: GameStore;
 
   constructor() {
     this.deckStore = new DeckStore(this);
+    this.gameStore = new GameStore(this);
   }
 }
 

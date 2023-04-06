@@ -3,7 +3,7 @@
 .table {
   @include flex-container(center, center);
   mix-blend-mode: multiply;
-  background-image: $backgroungFabricDescktop;
+  background-image: $backgroundFabricDescktop;
   height: 100vh;
   overflow: hidden;
   position: relative;
@@ -16,20 +16,6 @@
     outline: 1px solid $borderStartColor;
     outline-offset: 7px;
     border-radius: 33px;
-
-    h1 {
-      @include flex-container(center, center);
-      margin-bottom: 17px;
-      position: relative;
-      background: $textColorGradient;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-
-      @include screen-maxHeight(500px) {
-        margin-top: 5%;
-        margin-bottom: 1%;
-      }
-    }
   }
 }
 

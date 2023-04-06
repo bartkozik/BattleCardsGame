@@ -1,0 +1,42 @@
+@import "theme/common-style.scss";
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $backgroundFabricDescktop;
+  z-index: 9999;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  background: $spinnerBackgroud;
+  border-radius: 50%;
+  border: solid 1px $spinnerGreen;
+  position: relative;
+  animation: roll 1s ease-in-out infinite alternate;
+}
+
+.spinner:after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  border: 5px solid;
+  border-color: $spinnerInside transparent;
+}
+
+@keyframes roll {
+  0% {
+    transform: translateX(-150%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(150%) rotate(360deg);
+  }
+}

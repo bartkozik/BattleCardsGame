@@ -3,7 +3,7 @@
 .burnedCards {
   position: relative;
   top: -180px;
-  box-shadow: $middleCardsShadow1;
+  box-shadow: $color-middle-cards-shadow1;
   z-index: 1;
 
   @include screen-xs {

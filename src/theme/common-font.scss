@@ -7,7 +7,7 @@ $font-family: "Hoefler Text, sans-serif";
     text-align: center;
     @include flex-container(center, center);
     position: relative;
-    background: $textColorGradient;
+    background: $color-text-gradient;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 20px;

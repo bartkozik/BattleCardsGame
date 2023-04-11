@@ -5,6 +5,7 @@ import { useStores } from "RootStore";
 import { observer } from "mobx-react-lite";
 import Button from "theme/Button";
 import Toast from "theme/Toast";
+import HelpButton from "components/HelpButton";
 
 import styles from "./TableStart.module.scss";
 
@@ -23,6 +24,7 @@ const TableStart = observer(() => {
   return (
     <div className={cx(styles.table, styles.gradientTopDown)}>
       <div className={styles.gradientLeftRight}>
+        <HelpButton />
         <div className={styles.inCenter}>
           <h1>Play the game</h1>
           <Button buttonText="Start" onClick={createDeck} loading={submitting} />

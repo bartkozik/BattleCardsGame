@@ -3,7 +3,7 @@
 .button {
   @include flex-container(center, center, column);
   @include text;
-  @include gradientText($buttonTextGradient);
+  @include gradientText($color-button-text-gradient);
   position: relative;
   height: 39px;
   border-radius: 8px;
@@ -11,7 +11,7 @@
   overflow: hidden;
   padding-left: 27px;
   padding-right: 27px;
-  box-shadow: $buttonShadow;
+  box-shadow: $color-button-shadow;
   cursor: pointer;
 
   &::before {
@@ -21,15 +21,15 @@
     left: 0;
     bottom: 0;
     right: 0;
-    background: $primaryColor;
+    background: $primary-color;
     border-radius: inherit;
     z-index: -1;
   }
 
   &:hover,
   &:active {
-    @include gradientText($buttonTextGradienHover);
-    box-shadow: $hoverButtonShadow;
+    @include gradientText($color-button-text-gradient-hover);
+    box-shadow: $color-hover-button-shadow;
   }
 
   &.disabled {

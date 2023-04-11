@@ -3,17 +3,18 @@
 .table {
   @include flex-container(center, center);
   mix-blend-mode: multiply;
-  background-image: $backgroundFabricDescktop;
+  background-image: $color-background-fabric-descktop;
   height: 100vh;
   overflow: hidden;
   position: relative;
+  z-index: 1;
 
   .inCenter {
     @include flex-container(center, center, column);
     width: 67vw;
     height: 45vh;
-    border: 1px solid $borderStartColor;
-    outline: 1px solid $borderStartColor;
+    border: 1px solid $color-border-start;
+    outline: 1px solid $color-border-start;
     outline-offset: 7px;
     border-radius: 33px;
   }

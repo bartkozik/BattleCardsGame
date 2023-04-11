@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import TableStart from "components/TableStart";
 import PlayTable from "components/PlayTable";
 
-function Router() {
+const Router = (): JSX.Element => {
   return (
     <BrowserRouter>
       <Routes>
@@ -12,6 +12,6 @@ function Router() {
       </Routes>
     </BrowserRouter>
   );
-}
+};
 
 export default Router;

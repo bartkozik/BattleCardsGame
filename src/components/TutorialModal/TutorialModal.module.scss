@@ -1,0 +1,83 @@
+@import "theme/common-style.scss";
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:$color-overlay;
+  opacity: 0.2;
+  z-index: 9998;
+}
+
+.tutorialModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: $primary-color;
+  border-radius: 33px;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.modalContent {
+  @include flex-container(center, center, column);
+  width: 67vw;
+  height: 70vh;
+  border: 2px solid $color-border-start;
+  border-radius: 33px;
+  z-index: 9999;
+
+  @include screen-xs {
+    min-width: 80vw;
+    min-height: 56vh;
+  }
+}
+
+.carousel {
+  @include flex-container(space-evenly,center, column);
+  height: 100%;
+
+  img {
+    height: 250px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid $color-border-start;
+
+    @include screen-xs {
+      height: 150px;
+      width: 240px;
+    }
+    @include tabletMax(280px, 653px){
+      height: 120px;
+      width: 200px;
+    }
+  }
+
+  p {
+    @include text;
+    color: $color-border-start;
+    text-align: center;
+    padding: 30px 20px;
+  }
+}
+
+.controls {
+  @include flex-container(center);
+  margin-top: 30px;
+  margin-bottom: 20px;
+  gap: 30px;
+  width: 100%;
+
+  @include screen-md {
+    margin: 30px;
+  }
+
+  @include screen-xs {
+    margin-top: 30px;
+    gap: 10px;
+  }
+}

@@ -1,0 +1,26 @@
+@import "theme/common-style.scss";
+
+.helpButtonContainer {
+  position: fixed;
+  top: 25px;
+  left: 7px;
+  padding: 5px;
+  z-index: 9999;
+
+  @include screen-xs {
+    top: 0;
+    left: 0;
+  }
+}
+
+.helpButton {
+  @include text;
+  background-color: transparent;
+  border: 1px solid $color-border-start;
+  border-radius: 8px;
+  color: $color-help-button-text;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 7px 10px;
+  text-align: center;
+}

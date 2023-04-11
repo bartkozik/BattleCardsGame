@@ -7,7 +7,8 @@ import ComputerCards from "components/ComputerCards";
 import BurnedCards from "components/BurnedCards";
 import CardsOnHand from "components/CardsOnHand";
 import Button from "theme/Button";
-import UnflippedCardsComponent from "theme/UnflippedCards";
+import UnflippedCardsComponent from "components/UnflippedCards";
+import HelpButton from "components/HelpButton";
 import Loader from "theme/Loader";
 
 import styles from "./PlayTable.module.scss";
@@ -20,6 +21,7 @@ const PlayTable = (): JSX.Element => {
     <div className={cx(styles.table, styles.gradientTopDown)}>
       <div className={styles.gradientLeftRight}>
         <div className={styles.tableBackgroundPlay} />
+        <HelpButton />
         <div className={styles.exitContainer}>
           <Button href="/" buttonText="Exit" />
         </div>

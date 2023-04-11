@@ -7,15 +7,20 @@
   transform: translate(-50%, -50%);
   @include flex-container(center, center);
   mix-blend-mode: multiply;
-  background-image: $backgroundFabricDescktop;
+  background-image: $color-background-fabric-descktop;
   overflow: hidden;
 
   .inCenter {
     @include flex-container(center, center, column);
     width: 67vw;
     height: 45vh;
-    border: 2px solid $borderStartColor;
+    border: 2px solid $color-border-start;
     border-radius: 33px;
     z-index: 9999;
+
+    @include screen-xs {
+      width: 70vw;
+      height: 50vh;
+    }
   }
 }

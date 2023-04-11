@@ -3,21 +3,26 @@
 .scoreBoard {
   @include flex-container(center, center, column);
   @include text;
-  position: fixed;
-  top: 20px;
+  position: absolute;
+  top: 10px;
   right: 20px;
-  color: $scoreBoard;
   padding: 10px 20px;
+  color: $color-score-board;
+ 
   border-radius: 8px;
-  box-shadow: $buttonShadow;
-  background: $primaryColor;
+  box-shadow: $color-button-shadow;
+  background: $primary-color;
   animation: fadeIn 1s ease;
   display: inline-block;
-  z-index: 9999;
+  z-index: 9000;
 
   @include screen-xs {
     top: 5px;
     right: 5px;
+    padding: 7px 15px;
+  }
+  @include tabletMax(280px, 653px){
+    padding: 3px 8px;
   }
 
   span {

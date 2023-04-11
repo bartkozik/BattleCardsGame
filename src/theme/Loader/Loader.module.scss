@@ -9,16 +9,16 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: $backgroundFabricDescktop;
+  background: $color-background-fabric-descktop;
   z-index: 9999;
 }
 
 .spinner {
   width: 48px;
   height: 48px;
-  background: $spinnerBackgroud;
+  background: $color-spinner-backgroud;
   border-radius: 50%;
-  border: solid 1px $spinnerGreen;
+  border: solid 1px $color-spinner-green;
   position: relative;
   animation: roll 1s ease-in-out infinite alternate;
 }
@@ -29,7 +29,7 @@
   inset: 5px;
   border-radius: 50%;
   border: 5px solid;
-  border-color: $spinnerInside transparent;
+  border-color: $color-spinner-inside transparent;
 }
 
 @keyframes roll {

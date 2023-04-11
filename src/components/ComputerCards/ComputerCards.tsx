@@ -2,7 +2,7 @@ import React from "react";
 import { observer } from "mobx-react-lite";
 import { useStores } from "RootStore";
 import CardComponent from "theme/Card";
-import InfoBoard from "theme/InfoBoard";
+import InfoBoard from "components/InfoBoard";
 
 import styles from "./ComputerCards.module.scss";
 

@@ -1,21 +1,21 @@
-$primaryColor: linear-gradient(180deg, rgb(58, 113, 92) 0%, rgb(14, 56, 45) 100%);
+$primary-color: linear-gradient(180deg, rgb(58, 113, 92) 0%, rgb(14, 56, 45) 100%);
 
-$backgroundFabricDescktop: url("../../public/cards/fabric_texture_green-1.png");
-$backgroundPatern: url("../../public/cards/Fill_1-1.png");
-$backgroundPaternMobile: url("../../public/cards/Fill_Mobile.png");
+$color-background-fabric-descktop: url("../../public/cards/fabric_texture_green-1.png");
+$color-background-patern: url("../../public/cards/Fill_1-1.png");
+$color-background-patern-mobile: url("../../public/cards/Fill_Mobile.png");
 
 //gradients for shadow in TableStart & PlayTable
-$gradientUp: linear-gradient(to top, rgba(21, 40, 35, 0) 0%, rgba(21, 40, 35, 1) 100%);
-$gradientDown: linear-gradient(to bottom, rgba(21, 40, 35, 0) 0%, rgba(21, 40, 35, 1) 100%);
+$color-gradient-up: linear-gradient(to top, rgba(21, 40, 35, 0) 0%, rgba(21, 40, 35, 1) 100%);
+$color-gradient-down: linear-gradient(to bottom, rgba(21, 40, 35, 0) 0%, rgba(21, 40, 35, 1) 100%);
 
-$gradientLeft: linear-gradient(to left, rgba(21, 40, 35, 0) 0%, rgba(21, 40, 35, 1) 100%);
+$color-gradient-left: linear-gradient(to left, rgba(21, 40, 35, 0) 0%, rgba(21, 40, 35, 1) 100%);
 
-$gradientRight: linear-gradient(to right, rgba(21, 40, 35, 0) 0%, rgba(21, 40, 35, 1) 100%);
+$color-gradient-right: linear-gradient(to right, rgba(21, 40, 35, 0) 0%, rgba(21, 40, 35, 1) 100%);
 
 //button colors & shadows
-$buttonTextGradient: linear-gradient(#5f5532 0%, #f7e2b7 42%, #fffffd 80%, #f5d697 100%);
+$color-button-text-gradient: linear-gradient(#5f5532 0%, #f7e2b7 42%, #fffffd 80%, #f5d697 100%);
 
-$buttonTextGradienHover: linear-gradient(
+$color-button-text-gradient-hover: linear-gradient(
   90deg,
   rgb(185, 161, 109) 0%,
   rgb(127, 108, 62) 45%,
@@ -24,39 +24,36 @@ $buttonTextGradienHover: linear-gradient(
   rgb(73, 60, 27) 100%
 );
 
-$buttonShadow: 5px 5px 5px rgba(0, 0, 0, 0.5), 11px 11px 6px rgba(0, 0, 0, 0.1),
+$color-button-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5), 11px 11px 6px rgba(0, 0, 0, 0.1),
   13px 13px 6px rgba(0, 0, 0, 0.1), 15px 15px 6px rgba(0, 0, 0, 0.08326),
   17px 17px 9px rgba(0, 0, 0, 0.080119), 21px 21px 9px rgba(0, 0, 0, 0.082851),
   25px 25px 13px rgba(0, 0, 0, 0.08), -6px -10px 15px rgba(222, 255, 194, 0.1135);
 
-$hoverButtonShadow: -3px -7px 10px rgba(222, 255, 194, 0.11), 20px 20px 10px rgba(0, 0, 0, 0.08),
-  16px 16px 7px rgba(0, 0, 0, 0.08), 13px 13px 7px rgba(0, 0, 0, 0.08),
-  10px 10px 4px rgba(0, 0, 0, 0.08), 8px 8px 4px rgba(0, 0, 0, 0.1), 6px 6px 4px rgba(0, 0, 0, 0.1),
-  2px 2px 3px rgba(0, 0, 0, 0.5);
+$color-hover-button-shadow: -3px -7px 10px rgba(222, 255, 194, 0.11),
+  20px 20px 10px rgba(0, 0, 0, 0.08), 16px 16px 7px rgba(0, 0, 0, 0.08),
+  13px 13px 7px rgba(0, 0, 0, 0.08), 10px 10px 4px rgba(0, 0, 0, 0.08),
+  8px 8px 4px rgba(0, 0, 0, 0.1), 6px 6px 4px rgba(0, 0, 0, 0.1), 2px 2px 3px rgba(0, 0, 0, 0.5);
 
-$cardsShadowMiddle: 0 2px 16px 0 rgba(0, 0, 0, 0.22);
+$color-cards-shadow-middle: 0 2px 16px 0 rgba(0, 0, 0, 0.22);
 
-$middleCardsShadow1: -6px -10px 15px 0 rgba(222, 255, 194, 0.24),
+$color-middle-cards-shadow1: -6px -10px 15px 0 rgba(222, 255, 194, 0.24),
   30px 30px 13px 0 rgba(0, 0, 0, 0.08), 26px 26px 9px 0 rgba(0, 0, 0, 0.08),
   22px 22px 9px 0 rgba(0, 0, 0, 0.08), 20px 20px 6px 0 rgba(0, 0, 0, 0.08),
   18px 18px 6px 0 rgba(0, 0, 0, 0.1), 16px 16px 6px 0 rgba(0, 0, 0, 0.1),
   10px 10px 5px 0 rgba(0, 0, 0, 0.5);
 
-$middleCardsShadow2: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-
-$middleCardsShadow3: 2px 2px 3px 0 rgba(0, 0, 0, 0.24);
-
-$deckShadow: -6px -10px 15px 0 rgba(222, 255, 194, 0.04), 30px 30px 13px 0 rgba(0, 0, 0, 0.08),
-  26px 26px 9px 0 rgba(0, 0, 0, 0.08), 22px 22px 9px 0 rgba(0, 0, 0, 0.08),
-  20px 20px 6px 0 rgba(0, 0, 0, 0.08), 18px 18px 6px 0 rgba(0, 0, 0, 0.1),
-  16px 16px 6px 0 rgba(0, 0, 0, 0.1), 10px 10px 5px 0 rgba(0, 0, 0, 0.5);
+$color-deck-shadow: -6px -10px 15px 0 rgba(222, 255, 194, 0.04),
+  30px 30px 13px 0 rgba(0, 0, 0, 0.08), 26px 26px 9px 0 rgba(0, 0, 0, 0.08),
+  22px 22px 9px 0 rgba(0, 0, 0, 0.08), 20px 20px 6px 0 rgba(0, 0, 0, 0.08),
+  18px 18px 6px 0 rgba(0, 0, 0, 0.1), 16px 16px 6px 0 rgba(0, 0, 0, 0.1),
+  10px 10px 5px 0 rgba(0, 0, 0, 0.5);
 
 // text colors & shadows
-$textShadow: 2px 2px 7px rgba(248, 226, 184, 0.11), -1px -1px 0 rgba(0, 0, 0, 0.5);
+$color-help-button-text: white;
 
-$scoreBoard: rgb(196, 172, 41);
+$color-score-board: rgb(196, 172, 41);
 
-$textColorGradient: linear-gradient(
+$color-text-gradient: linear-gradient(
   270deg,
   rgb(95, 85, 50) 0%,
   rgb(247, 226, 183) 22%,
@@ -65,22 +62,16 @@ $textColorGradient: linear-gradient(
   rgb(95, 85, 50) 100%
 );
 
-$borderGradientColor: linear-gradient(
-  90deg,
-  #b9a16d 0%,
-  #7f6c3e 21%,
-  #f7e2b7 61%,
-  #f5d697 67%,
-  #493c1b 100%
-);
+$color-border-start: rgb(186, 175, 129);
 
-$borderStartColor: rgb(186, 175, 129);
-
-$errorColor: linear-gradient(to right, rgba(255, 80, 80, 0.8), rgba(255, 120, 120, 0.8));
-$toast: white;
+$color-error: linear-gradient(to right, rgba(255, 80, 80, 0.8), rgba(255, 120, 120, 0.8));
+$color-toast: white;
 
 //loader
-$loaderGreen: rgba(190, 221, 190, 0.9);
-$spinnerGreen: green;
-$spinnerBackgroud: white;
-$spinnerInside: green;
+$color-loader-green: rgba(190, 221, 190, 0.9);
+$color-spinner-green: green;
+$color-spinner-backgroud: white;
+$color-spinner-inside: green;
+
+//modalOverlay
+$color-overlay: black;

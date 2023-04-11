@@ -4,7 +4,6 @@
   @include flex-container;
   @include cardStyle;
   position: absolute;
-  z-index: 2;
   bottom: -123.93px;
   left: 28.19%;
 
@@ -33,10 +32,9 @@
   img {
     @include cardStyle;
     @include randomCardDraw(5px);
-    box-shadow: $cardsShadowMiddle;
+    box-shadow: $color-cards-shadow-middle;
     position: absolute;
     left: 1px;
-    z-index: 2;
 
     &:not(:last-child) {
       filter: blur(4px);
@@ -45,8 +43,7 @@
     @for $i from 1 through 26 {
       &:nth-child(#{$i}) {
         top: $i + 5px;
-        box-shadow: $cardsShadowMiddle;
-        z-index: $i + 1;
+        box-shadow: $color-cards-shadow-middle;
         left: ((($i - 2) * 5px) + 156.5px);
 
         @include screen-lg {

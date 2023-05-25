@@ -1,5 +1,7 @@
 # Battle Cards Game created in React with Typescript & styled with Scss
 
+Libraries used in project: MobX, ReactRouterDom, Eslint, Prettier, Sass, Axios, Clsx. 
+
 ## Available Scripts
 
 In the project directory, you can run:
